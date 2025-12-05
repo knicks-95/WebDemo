@@ -1,0 +1,133 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 10 15% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 20 14% 16%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 20 14% 16%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 200 100% 50%;
+    --primary-foreground: 10 15% 8%;
+
+    --secondary: 280 70% 55%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 14% 40%;
+    --muted-foreground: 210 20% 70%;
+
+    --accent: 190 100% 50%;
+    --accent-foreground: 10 15% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 20 14% 28%;
+    --input: 20 14% 24%;
+    --ring: 200 100% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 20 14% 16%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 200 100% 50%;
+    --sidebar-primary-foreground: 10 15% 8%;
+    --sidebar-accent: 190 100% 50%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 20 14% 28%;
+    --sidebar-ring: 200 100% 50%;
+  }
+
+  .dark {
+    --background: 10 15% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 20 14% 16%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 20 14% 16%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 200 100% 50%;
+    --primary-foreground: 10 15% 8%;
+
+    --secondary: 280 70% 55%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 14% 40%;
+    --muted-foreground: 210 20% 70%;
+
+    --accent: 190 100% 50%;
+    --accent-foreground: 10 15% 8%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 20 14% 28%;
+    --input: 20 14% 24%;
+    --ring: 200 100% 50%;
+    --sidebar-background: 20 14% 16%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 200 100% 50%;
+    --sidebar-primary-foreground: 10 15% 8%;
+    --sidebar-accent: 190 100% 50%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 20 14% 28%;
+    --sidebar-ring: 200 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Space Mono", monospace;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+    font-family: "Orbitron", sans-serif;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
+  }
+
+  .glow-effect {
+    @apply shadow-lg shadow-primary/20;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:translate-y-[-4px] hover:shadow-xl hover:shadow-primary/30;
+  }
+}
